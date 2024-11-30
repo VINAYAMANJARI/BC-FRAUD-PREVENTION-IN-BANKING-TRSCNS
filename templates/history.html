@@ -1,0 +1,38 @@
+<!-- templates/history.html -->
+{% extends "base.html" %}
+
+{% block title %}Blockchain History{% endblock %}
+
+{% block content %}
+<div class="mt-5">
+    <h2>Blockchain History</h2>
+    <hr>
+    {% if chain %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Timestamp</th>
+                    <th>Transaction</th>
+                    <th>Hash</th>
+                    <th>Previous Hash</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for block in chain %}
+                <tr>
+                    <td>{{ block.index }}</td>
+                    <td>{{ block.timestamp }}</td>
+                    <td>{{ block.data }}</td>
+                    <td>{{ block.hash }}</td>
+                    <td>{{ block.previous_hash }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No transactions found in the blockchain.</p>
+    {% endif %}
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
+</div>
+{% endblock %}

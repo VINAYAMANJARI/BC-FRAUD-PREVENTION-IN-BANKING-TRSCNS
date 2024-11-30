@@ -1,0 +1,51 @@
+<!-- templates/login.html -->
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+</style>
+<div class="form-container">
+    <h3 class="text-center mb-4">Login</h3>
+    <form action="{{ url_for('login') }}" method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3 position-relative">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            <i class="toggle-password fa fa-eye" onclick="togglePasswordVisibility('password', this)"></i>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <div class="text-center mt-3">
+        <small>Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a></small>
+    </div>
+</div>
+
+<script>
+    function togglePasswordVisibility(inputId, icon) {
+        const input = document.getElementById(inputId);
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        } else {
+            input.type = 'password';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        }
+    }
+</script>
+
+<style>
+    .toggle-password {
+        position: absolute;
+        right: 10px;
+        top: 38px; /* Adjust to align with the input */
+        cursor: pointer;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<!-- templates/dashboard.html -->
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="mt-5">
+    <h2>Welcome, {{ current_user.username }}</h2>
+    <hr>
+    <h4>Add a New Transaction</h4>
+    <form method="POST" class="mb-4">
+        <div class="mb-3">
+            <label for="transaction" class="form-label">Transaction Details</label>
+            <input type="text" class="form-control" id="transaction" name="transaction" required>
+            <div class="form-text">Enter unique transaction details to add to the blockchain.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Transaction</button>
+    </form>
+    <a href="{{ url_for('history') }}" class="btn btn-secondary">View History</a>
+</div>
+
+{% endblock %}

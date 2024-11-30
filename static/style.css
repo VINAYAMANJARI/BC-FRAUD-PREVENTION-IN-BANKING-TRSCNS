@@ -1,0 +1,63 @@
+/* static/styles.css */
+
+/* Light gray background for the body */
+body {
+    background-color: #f8f9fa;
+    font-size: 15px;
+}
+
+/* Custom Navbar Styling */
+.navbar-custom {
+    background-color: #001f3f !important; /* Navy blue with !important to override Bootstrap */
+}
+
+/* Navbar brand and links in white */
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: white !important; /* Ensure text is white */
+}
+
+/* Form container styling */
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Primary button in navy blue */
+.btn-primary {
+    background-color: #001f3f;
+    border: none;
+    border-radius: 50px;
+}
+
+.btn-primary:hover {
+    background-color: #0e82bc;
+}
+
+/* Secondary button styling */
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #1a1b1c;
+}
+
+/* Icon styling */
+.icon {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* Additional Responsive Styling */
+@media (max-width: 576px) {
+    .form-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
